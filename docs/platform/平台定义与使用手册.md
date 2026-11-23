@@ -1,94 +1,59 @@
-# MinDock
+# MinDock 思泊 · 个人 360 记忆库
 
-MinDock turns your local notes, documents, and Obsidian Wiki into a searchable personal knowledge base. Use StudyPal, WorkPal, or LifePal to organize material by context, follow connections in the knowledge graph, and ask questions with links back to evidence. You can review AI-extracted candidates before adding them to your graph.
+**让思考有所停泊，让成长自有航向**
 
-思泊（MinDock）是一个本地优先的个人知识工具。它支持导入资料、检索原文、浏览知识图谱，以及连接你选择的模型进行问答。
+MinDock 思泊是一个本地优先的个人 360 记忆库。它把学习、工作和生活中的资料、笔记、对话与经验积累在一起。遇到新问题时，你可以找回相关记录，沿着知识图谱查看它们的联系，再回到原文核对出处。
 
-Source version: see [VERSION](VERSION).
+- **StudyPal 学习**：归档教材和课程笔记，整理知识点，记录掌握进度。
+- **WorkPal 工作**：积累项目记录与行业知识，接入已有的 Obsidian Wiki。
+- **LifePal 生活**：记录生活计划、待办和日常经验。
 
-MinDock source code is available under the [MIT License](LICENSE). Bundled
-third-party components retain their respective licenses. See
-[Third-party notices](THIRD-PARTY-NOTICES.md).
+接入自己的模型后，可以围绕库内资料提问，也可以让 AI 提议知识点和关系，审阅后再加入图谱。
 
-## Install And Start
+## 本地安装与启动
 
-Requires Python 3.11+ (Python 3.13 recommended for development). Node.js is
-needed for JavaScript tests and Windows desktop builds, not browser runtime.
+需要 Python 3.11 或更新版本，开发推荐 Python 3.13。Node.js 用于前端测试和 Windows 桌面构建。
 
-```sh
+```
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8899
 ```
 
-On Windows use `.venv\Scripts\python.exe` instead of `.venv/bin/python`.
-Alternatively run `启动伴学.command` on macOS or `start_cyberpal.bat` on Windows.
-The launchers install the base dependencies on first use. Follow the local URL
-printed at startup. Do not expose the local service to the public Internet.
+Windows 下用 `.venv\Scripts\python.exe` 替换 `.venv/bin/python`。也可以在 macOS 双击 `启动伴学.command`，或在 Windows 运行 `start_cyberpal.bat`。启动脚本会在首次运行时安装基础依赖。服务就绪后，用本机浏览器打开 [MinDock](http://127.0.0.1:8899/)。
 
-Your runtime data is created locally in `data/`; it is not part of this source
-distribution. Public sample data lives in `seed/public/` (also mirrored in
-`seed/` for compatibility). It is demo content, not your private course library.
-To load the public samples explicitly:
+首次运行会在本机创建 `data/`。公开示例位于 `seed/public/`，可用以下命令加载。升级或批量导入前，请先备份数据目录。
 
-```sh
+```
 .venv/bin/python scripts/load_memory.py
 ```
 
-## Usage
+## 开始使用
 
 ### 课程材料上传与存储
 
-Create or select a course, then upload your own material in its capture panel.
-Wait for indexing, review extracted candidates, and confirm the items you want
-in the graph. Original files, conversations and notes stay in your local data
-directory. Back up that directory before upgrades or imports.
+在学习工作区选择或新建课程，从录入页添加资料。索引完成后可以搜索原文、检查提取的知识候选，并确认要加入图谱的条目。搜索前先选定工作区和课程。导入 Obsidian Wiki 时，在应用内选择本机库目录。
 
-Select the correct workspace and course before searching. Empty results do not
-mean that an unindexed attachment or private Wiki was bundled with the app.
-Wiki import requires an explicitly selected local directory; no private Wiki
-content is distributed here. Review sources before accepting generated text.
+### 模型、联网与 MCP
 
-### Models And MCP
+在「设置」中配置自己的模型接口和密钥。记录、浏览与本地检索可以独立使用，AI 问答和知识抽取需要可用的模型接口。使用联网工具或远程模型时，选中的内容可能会发送给对应服务商。
 
-Configure your own model endpoint and credentials in Settings. Without a model,
-local records and search remain available, but model-generated answers are not.
-Do not put credentials in source files, commands, screenshots or committed JSON.
+使用 MCP 时，先安装可信的服务，再在应用中限定使用范围，点击「连接并发现工具」，选好只读工具后保存。可以用环境变量引用凭据。配置和扩展说明见仓库内的 `docs/examples/mcp.example.json` 和 `docs/platform/本地扩展与向量检索.md`。
 
-For MCP, add a trusted, separately installed server, select its scope, use
-“连接并发现工具”, then select read-only tools and save. MCP is optional and does not
-install or sandbox third-party programs. Credentials should be referenced by
-environment variable names. See `docs/examples/mcp.example.json` (disabled by
-default) and `docs/platform/本地扩展与向量检索.md`.
+### OCR、录音与向量检索
 
-### Optional Features And Limits
-
-```sh
+```
 .venv/bin/python -m pip install -r requirements-extensions.txt
 .venv/bin/python scripts/local_extensions.py status
 ```
 
-OCR, speech recognition and local vector experiments need optional dependencies
-and, where applicable, separately downloaded models or OS permissions. Do not
-commit model files or recordings. Speech chunk receipts and session locks are
-process-local; unpersisted audio is not recoverable after a process crash.
-An accepted chunk receipt is not a durable audio backup.
+OCR、语音识别和向量检索可能需要额外的模型或系统权限。录音完成后请确认已保存，进程退出后可能无法恢复尚未落盘的音频。
 
-Network tools and remote model endpoints can send selected content to their
-providers. Disable them when working offline or with restricted material.
-Email, mobile notifications and production multi-user hosting are not provided.
-Vector experiment tooling is not a guarantee of answer correctness.
+## 开发与测试
 
-## Development And Tests
-
-```sh
+```
 .venv/bin/python -m pip install -r requirements-dev.txt -r requirements-extensions.txt
 npm ci
-```
-
-Use an empty temporary data directory, never your personal data directory:
-
-```sh
 CYBERPAL_DATA_DIR="$(mktemp -d)" .venv/bin/python -m pytest -q tests
 npm run test:node
 node --test desktop/windows/tests/*.test.cjs
@@ -96,37 +61,26 @@ node --test desktop/windows/tests/*.test.cjs
 PYTHON=.venv/bin/python bash scripts/check_licenses.sh
 ```
 
-On PowerShell set `$env:CYBERPAL_DATA_DIR` to a new temporary directory before
-running tests. Optional real-model tests are opt-in. Do not use private Wiki or
-textbook files as public fixtures. The test fixtures are synthetic examples.
-Retrieval evaluation dependencies are in `requirements-retrieval-eval.txt`.
+测试使用临时数据目录。Windows PowerShell 中请先将 `$env:CYBERPAL_DATA_DIR` 设为新的临时目录。真实模型测试按需启用，检索评测依赖见 `requirements-retrieval-eval.txt`。
 
-## Desktop Builds
+## 构建桌面版
 
-macOS builds require macOS, Xcode command-line tools and the build dependencies:
+macOS 构建需要 Xcode 命令行工具和桌面构建依赖。
 
-```sh
+```
 .venv/bin/python -m pip install -r desktop/requirements-build.txt
 .venv/bin/python scripts/build_macos.py --help
 ```
 
-Windows builds use Electron, official Python runtime downloads and pinned wheels:
+Windows 构建使用 Electron、官方 Python 运行时和固定版本的依赖。
 
-```sh
+```
 npm ci --prefix desktop/windows
 .venv/bin/python scripts/build_windows.py --help
 ```
 
-Build scripts place artifacts under `output/`. See each command's options and
-the pinned desktop requirement files. Optional component checks are performed by
-`scripts/check_extension_packaging.py`. Cross-building and automated tests do not
-replace native installation, microphone/OCR, upgrade or uninstall acceptance on
-the target OS. Signing, notarization and Windows native acceptance are separate
-release steps; do not claim a source export passed them.
+构建产物位于 `output/`。安装、OCR、麦克风权限、升级和卸载以目标系统实机验证为准。
 
-## License
+## 版本与许可证
 
-See `LICENSE` for this project's terms and `THIRD-PARTY-NOTICES.md` for dependency
-notices. Vendored JavaScript licenses are retained beside their source files in
-`web/assets/` and `web/assets/vendor/`. Source availability does not change those
-license terms.
+当前源码版本见 `VERSION`，版本变更见 `CHANGELOG.md`。MinDock 自有源码采用 MIT 协议，所包含的第三方组件保留各自的许可证。详见 [MIT 许可证](https://github.com/ramoncooling-hue/airamon/blob/main/LICENSE) 和 [第三方组件声明](https://github.com/ramoncooling-hue/airamon/blob/main/THIRD-PARTY-NOTICES.md)。

@@ -40,8 +40,8 @@
     {
       "mode": "0644",
       "path": "README.md",
-      "sha256": "efc25c6a903ec87390a49c72d4c4be171c0674cb67a1d8d286bb0df6ff7777f9",
-      "size": 5747
+      "sha256": "5ddb467e1f43c24e118a0f70ed2c79508a3fa7f18a482bc52a9382df34117175",
+      "size": 4258
     },
     {
       "mode": "0644",
@@ -886,8 +886,8 @@
     {
       "mode": "0644",
       "path": "docs/GITHUB-UPLOAD.md",
-      "sha256": "53873a89896abf0b3e78d88f482c9775542f1caae85c6f464d8877e23853a900",
-      "size": 9275
+      "sha256": "241726f7b3b6ec12c005912e1c91a98870a8113d5975ebb647a8acd543927404",
+      "size": 5108
     },
     {
       "mode": "0644",
@@ -922,8 +922,8 @@
     {
       "mode": "0644",
       "path": "docs/platform/平台定义与使用手册.md",
-      "sha256": "efc25c6a903ec87390a49c72d4c4be171c0674cb67a1d8d286bb0df6ff7777f9",
-      "size": 5747
+      "sha256": "5ddb467e1f43c24e118a0f70ed2c79508a3fa7f18a482bc52a9382df34117175",
+      "size": 4258
     },
     {
       "mode": "0644",
