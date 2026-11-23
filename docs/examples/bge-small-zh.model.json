@@ -1,0 +1,15 @@
+{
+  "model": "BAAI/bge-small-zh-v1.5",
+  "repository": "Qdrant/bge-small-zh-v1.5",
+  "revision": "677b527935023b31f309ecb027745526aa5f680f",
+  "source": "https://modelscope.cn/models/Qdrant/bge-small-zh-v1.5",
+  "license": "MIT (upstream model; verify before distribution)",
+  "files": {
+    "model_optimized.onnx": {"bytes": 94781076, "sha256": "1294ea4b6331115a353d81f96b85e8c8d7fdcc284453d5b2fab5b016230aad38"},
+    "config.json": {"bytes": 739, "sha256": "9088751d39abbf86ec3d19ffca92ad62ad19075f7e59712e6c71217fa125d1d3"},
+    "special_tokens_map.json": {"bytes": 125, "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3"},
+    "tokenizer.json": {"bytes": 439125, "sha256": "48cea5d44424912a6fd1ea647bf4fe50b55ab8b1e5879c3275f80e339e8fae26"},
+    "tokenizer_config.json": {"bytes": 367, "sha256": "e6f3b96db926a37d4039995fbf5ad17de158dfb8f6343d607e4dbaad18d75f5a"},
+    "vocab.txt": {"bytes": 109540, "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"}
+  }
+}

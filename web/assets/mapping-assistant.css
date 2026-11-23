@@ -1,0 +1,101 @@
+/* Scoped to the rule dialog; graph and global navigation retain their styles. */
+.mapping-assistant {
+  --ma-accent: var(--acc, #660874);
+  --ma-border: #e6e3e9;
+  width: min(1120px, calc(100vw - 48px));
+  height: min(710px, calc(100dvh - 48px));
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--ma-border);
+  border-radius: 10px;
+  color: #302c35;
+  background: #fff;
+  box-shadow: 0 18px 64px #24152d30;
+  font: 13px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+  letter-spacing: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.mapping-assistant[open] { display: flex; flex-direction: column; }
+.mapping-assistant::backdrop { background: #24152d55; }
+.mapping-assistant *, .mapping-assistant *::before, .mapping-assistant *::after { box-sizing: border-box; }
+.mapping-assistant [hidden] { display: none !important; }
+.mapping-assistant .ma-header {
+  display: flex; align-items: center; gap: 12px; flex: 0 0 auto;
+  padding: 12px 18px; border-bottom: 1px solid var(--ma-border);
+}
+.mapping-assistant h2 { margin: 0; font-size: 16px; font-weight: 650; letter-spacing: 0; }
+.mapping-assistant .ma-workspace { font-size: 12px; color: #75697d; overflow-wrap: anywhere; }
+.mapping-assistant .ma-close { margin-left: auto; }
+.mapping-assistant .ma-layout { display: grid; grid-template-columns: 254px minmax(0, 1fr); flex: 1; min-height: 0; }
+.mapping-assistant .ma-setup, .mapping-assistant .ma-review { min-width: 0; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.mapping-assistant .ma-setup { padding: 16px; background: #faf8fc; border-right: 1px solid var(--ma-border); }
+.mapping-assistant .ma-review { padding: 14px 18px 18px; }
+.mapping-assistant .ma-field { min-width: 0; margin-bottom: 12px; }
+.mapping-assistant .ma-field > label { display: block; font-size: 12px; font-weight: 600; color: #61536c; margin-bottom: 5px; }
+.mapping-assistant select, .mapping-assistant textarea {
+  display: block; width: 100%; min-width: 0; padding: 7px 8px;
+  border: 1px solid #ddd5e3; border-radius: 5px; color: #302c35; background: #fff;
+  font: inherit; font-size: 12px; line-height: 1.5;
+}
+.mapping-assistant select { height: 34px; text-overflow: ellipsis; }
+.mapping-assistant textarea { resize: vertical; min-height: 60px; max-height: 200px; }
+.mapping-assistant #mappingPurpose { min-height: 116px; }
+.mapping-assistant .ma-button {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 32px;
+  padding: 5px 11px; border: 1px solid #ddd5e3; border-radius: 5px; background: #fff;
+  color: #61536c; font: inherit; font-size: 12px; line-height: 1.5; cursor: pointer; white-space: nowrap;
+}
+.mapping-assistant .ma-button:hover { background: #f3edf7; }
+.mapping-assistant .ma-primary { background: var(--ma-accent); border-color: var(--ma-accent); color: #fff; }
+.mapping-assistant .ma-primary:hover { background: #7b2387; }
+.mapping-assistant :disabled { opacity: .5; cursor: not-allowed; }
+.mapping-assistant :focus-visible { outline: 2px solid #9961af; outline-offset: 2px; }
+.mapping-assistant .ma-hint { margin: 7px 0 12px; color: #776b80; font-size: 11px; line-height: 1.65; overflow-wrap: anywhere; }
+.mapping-assistant .ma-history-row { display: flex; align-items: end; gap: 8px; margin-bottom: 12px; }
+.mapping-assistant .ma-history-row .ma-field { flex: 1; margin: 0; }
+.mapping-assistant .ma-error { margin: 0 0 12px; padding: 8px 10px; border-radius: 5px; color: #963646; background: #fff3f5; font-size: 12px; overflow-wrap: anywhere; }
+.mapping-assistant .ma-empty { margin: 16px 0; color: #8a7e93; font-size: 12px; }
+.mapping-assistant .ma-version-head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+.mapping-assistant h3 { margin: 0; color: #51445c; font-size: 12px; font-weight: 650; }
+.mapping-assistant .ma-status { padding: 2px 8px; border-radius: 4px; font-size: 11px; color: var(--ma-accent); background: #f2ebf6; }
+.mapping-assistant .ma-rule-section { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 10px; margin: 10px 0; align-items: baseline; }
+.mapping-assistant .ma-chips { display: flex; flex-wrap: wrap; gap: 5px; padding: 0; margin: 0; list-style: none; }
+.mapping-assistant .ma-chips li { padding: 3px 8px; border-radius: 4px; color: #61536c; background: #f6f3f8; font-size: 12px; overflow-wrap: anywhere; }
+.mapping-assistant .ma-fields { width: 100%; border-collapse: collapse; table-layout: fixed; margin: 12px 0; font-size: 12px; }
+.mapping-assistant .ma-fields caption { text-align: left; color: #51445c; font-weight: 650; padding-bottom: 6px; }
+.mapping-assistant .ma-fields th, .mapping-assistant .ma-fields td { padding: 6px 10px; border: 1px solid #eee9f1; text-align: left; overflow-wrap: anywhere; }
+.mapping-assistant .ma-fields th { background: #faf8fc; color: #776b80; font-weight: 500; }
+.mapping-assistant .ma-evidence { margin: 14px 0; padding-top: 10px; border-top: 1px solid var(--ma-border); }
+.mapping-assistant .ma-evidence > summary { color: #61536c; font-size: 12px; font-weight: 600; cursor: pointer; overflow-wrap: anywhere; }
+.mapping-assistant .ma-sample { padding: 10px 0; border-top: 1px solid #eee9f1; }
+.mapping-assistant .ma-sample h4 { margin: 0; font-size: 12px; font-weight: 600; overflow-wrap: anywhere; }
+.mapping-assistant .ma-sample .ma-hint { margin: 3px 0; }
+.mapping-assistant .ma-excerpt { margin: 6px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; line-height: 1.7; }
+.mapping-assistant .ma-footer { flex: 0 0 auto; padding: 12px 18px; border-top: 1px solid var(--ma-border); background: #fff; }
+.mapping-assistant .ma-confirmation { display: flex; align-items: baseline; gap: 7px; margin: 0 0 10px; font-size: 12px; color: #61536c; }
+.mapping-assistant .ma-confirmation input { accent-color: var(--ma-accent); flex: 0 0 auto; }
+.mapping-assistant .ma-actions { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.mapping-assistant .ma-message { flex: 1; min-width: 0; margin: 0; font-size: 11px; color: #776b80; overflow-wrap: anywhere; }
+.mapping-assistant .ma-extraction { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--ma-border); }
+.mapping-assistant .ma-extraction-counts { color: var(--ma-accent); font-size: 12px; line-height: 1.8; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.mapping-assistant .ma-extraction-preview { max-height: 300px; overflow: auto; overscroll-behavior: contain; scrollbar-gutter: stable; padding-right: 6px; }
+.mapping-assistant .ma-extraction-preview > details { margin: 8px 0; padding: 8px 10px; border: 1px solid var(--ma-border); border-radius: 5px; }
+.mapping-assistant .ma-extraction-preview summary { color: #61536c; cursor: pointer; font-size: 12px; font-weight: 600; overflow-wrap: anywhere; }
+.mapping-assistant .ma-extraction-preview dl { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 6px 10px; font-size: 12px; }
+.mapping-assistant .ma-extraction-preview dt { color: #776b80; }
+.mapping-assistant .ma-extraction-preview dd { margin: 0; }
+.mapping-assistant .ma-extraction-conflicts { margin-bottom: 12px; }
+.mapping-assistant .ma-extraction-conflicts ul { margin: 6px 0; padding-left: 20px; color: #963646; }
+.mapping-assistant .ma-extraction-reference { margin: 8px 0; }
+.mapping-assistant .ma-extraction-reference .ma-hint { margin: 3px 0; }
+.mapping-assistant .ma-extraction-preview blockquote { padding-left: 10px; border-left: 2px solid #ddd5e3; color: #61536c; }
+.mapping-assistant .ma-provenance { margin: 6px 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 11px/1.6 ui-monospace, monospace; color: #776b80; }
+.mapping-assistant .ma-extraction-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; padding-top: 10px; }
+@media (max-width: 900px) {
+  .mapping-assistant { width: calc(100vw - 24px); height: calc(100dvh - 24px); max-height: calc(100dvh - 24px); }
+  .mapping-assistant .ma-layout { grid-template-columns: 220px minmax(0, 1fr); }
+  .mapping-assistant .ma-setup, .mapping-assistant .ma-review { padding: 12px; }
+}

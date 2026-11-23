@@ -1,0 +1,6 @@
+{
+  "key": "material-recognition",
+  "name": "材料识别",
+  "version": "1.0.0",
+  "description": "识别用户上传材料的类型、结构和可处理范围，输出可供后续拆录步骤使用的结构化摘要。"
+}

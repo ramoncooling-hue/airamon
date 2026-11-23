@@ -1,0 +1,98 @@
+[
+  {
+    "id": "holdout_formula_01",
+    "query": "按资料中的单利公式，1万元本金、年利率5%、2年后利息是多少？",
+    "documents": [
+      {
+        "id": "synthetic-holdout-formula-01",
+        "text": "单利利息I=本金×年利率×年数。示例条件：本金10000元，年利率5%，期限2年。"
+      }
+    ],
+    "expected": "supported",
+    "rationale": "公式和输入条件齐全，只需进行10000×5%×2的确定性计算；结果为1000元。"
+  },
+  {
+    "id": "holdout_date_replaced_02",
+    "query": "星河讲座现在改到哪天？",
+    "documents": [
+      {
+        "id": "synthetic-holdout-date-old-02",
+        "text": "活动通知旧版：星河讲座原定于2026年11月4日举行。"
+      },
+      {
+        "id": "synthetic-holdout-date-new-02",
+        "text": "活动通知修订版明确取代旧版：星河讲座改为2026年11月6日举行。"
+      }
+    ],
+    "expected": "supported",
+    "rationale": "新通知明确替代旧通知，当前日期是2026年11月6日。"
+  },
+  {
+    "id": "holdout_date_conflict_03",
+    "query": "星河讲座的日期是哪一天？",
+    "documents": [
+      {
+        "id": "synthetic-holdout-date-a-03",
+        "text": "同日发布的正式通知甲：星河讲座安排于2026年11月4日。"
+      },
+      {
+        "id": "synthetic-holdout-date-b-03",
+        "text": "同日发布的正式通知乙：星河讲座安排于2026年11月6日。两份通知没有更正或替代关系。"
+      }
+    ],
+    "expected": "conflict",
+    "rationale": "同一事件存在无优先关系的不同日期，无法从现有证据确定唯一答案。"
+  },
+  {
+    "id": "holdout_personal_absent_04",
+    "query": "我上个月参加了哪几次读书会？",
+    "documents": [
+      {
+        "id": "synthetic-holdout-personal-04",
+        "text": "读书会通常每月举办两次，参与者可以在活动后提交阅读心得。"
+      }
+    ],
+    "expected": "insufficient",
+    "rationale": "通用活动安排不是当前提问者的参与历史。"
+  },
+  {
+    "id": "holdout_homonym_05",
+    "query": "陈晨负责的项目预算是多少？",
+    "documents": [
+      {
+        "id": "synthetic-holdout-homonym-a-05",
+        "text": "研发部陈晨负责青岚项目，预算为30万元。"
+      },
+      {
+        "id": "synthetic-holdout-homonym-b-05",
+        "text": "市场部陈晨负责白帆项目，预算为50万元。"
+      }
+    ],
+    "expected": "insufficient",
+    "rationale": "存在同名不同人和不同项目，问题没有部门或项目限定，不能选择其中一个金额。"
+  },
+  {
+    "id": "holdout_concept_not_value_06",
+    "query": "云桥公司2025年的净利率是多少？",
+    "documents": [
+      {
+        "id": "synthetic-holdout-concept-06",
+        "text": "净利率是净利润与营业收入的比率，通常以百分数表示。"
+      }
+    ],
+    "expected": "insufficient",
+    "rationale": "概念定义不能证明目标公司特定年度的实际数值。"
+  },
+  {
+    "id": "holdout_multi_question_partial_07",
+    "query": "青禾调研的负责人、预算和交付日期是什么？",
+    "documents": [
+      {
+        "id": "synthetic-holdout-project-07",
+        "text": "青禾调研由林岚负责，核定预算为12万元。"
+      }
+    ],
+    "expected": "partial",
+    "rationale": "负责人和预算有证据，交付日期没有证据。"
+  }
+]

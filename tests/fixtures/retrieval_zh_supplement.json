@@ -1,0 +1,18 @@
+[
+  {"id":"supplement-01","query":"有两个项目只能选一个，放弃的那个本来能赚的钱算不算选择的代价？","expected":[{"kind":"kp","course_name":"管理经济学","name":"机会成本"}]},
+  {"id":"supplement-02","query":"新产品的研发费已经支付且无法追回，评估是否继续上市时该如何看待这笔钱？","expected":[{"kind":"kp","course_name":"管理经济学","name":"沉没成本"}]},
+  {"id":"supplement-03","query":"我愿意支付五百，实际成交三百，中间的差额属于什么福利？","expected":[{"kind":"kp","course_name":"管理经济学","name":"消费者剩余"}]},
+  {"id":"supplement-04","query":"顾客对涨价的反应是否强烈，经济学里用哪个量来表示？","expected":[{"kind":"kp","course_name":"管理经济学","name":"需求价格弹性"}]},
+  {"id":"supplement-05","query":"十二月提供的服务到一月才收钱，收入究竟归到哪个期间？","expected":[{"kind":"kp","course_name":"会计学","name":"权责发生制"}]},
+  {"id":"supplement-06","query":"想区分经营收款和借款带来的现金，要看哪份财务报表？","expected":[{"kind":"kp","course_name":"会计学","name":"现金流量表"}]},
+  {"id":"supplement-07","query":"买来的生产设备要使用很多年，如何在这些年份之间分配费用？","expected":[{"kind":"kp","course_name":"会计学","name":"折旧"}]},
+  {"id":"supplement-08","query":"商品降价后预计出售净收入比账面成本还低，年末应作何准备？","expected":[{"kind":"kp","course_name":"会计学","name":"存货跌价准备"}]},
+  {"id":"supplement-09","query":"团队里报告失误不会被嘲笑或惩罚，这种共同信念叫什么？","expected":[{"kind":"kp","course_name":"组织行为学","name":"心理安全感"}]},
+  {"id":"supplement-10","query":"为了让团队意见一致，大家不肯指出方案漏洞，属于什么现象？","expected":[{"kind":"kp","course_name":"组织行为学","name":"群体思维"}]},
+  {"id":"supplement-11","query":"只注意符合原来判断的证据，把相反事实忽略掉，是什么认知问题？","expected":[{"kind":"kp","course_name":"组织行为学","name":"确认偏误"}]},
+  {"id":"supplement-12","query":"几个人一起干活的时候，个人贡献反而比独自做时小，这是什么？","expected":[{"kind":"kp","course_name":"组织行为学","name":"社会惰化"}]},
+  {"id":"negative-01","query":"火星车如何计算避障路径？","expected":[]},
+  {"id":"negative-02","query":"下周四考试在哪间教室？","expected":[]},
+  {"id":"negative-03","query":"折旧","course":"组织行为学","expected":[]},
+  {"id":"negative-04","query":"私人旅行密语","expected":[]}
+]

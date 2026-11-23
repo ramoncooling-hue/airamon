@@ -1,0 +1,28 @@
+# 本地门禁（无 CI 环境的等价物，T1.14）。
+# 一次性安装：.venv/bin/pre-commit install
+# 手动全量：.venv/bin/pre-commit run --all-files（verify-all 钩子为手动阶段）
+# 说明：完整门禁仍是 scripts/verify_all.sh；pre-commit 只做提交前快速拦截。
+default_language_version:
+  python: python3.13
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.1
+    hooks:
+      - id: ruff-check
+        name: ruff（仅运行时错误类规则）
+        types_or: [python, pyi]
+        args: ["--select", "E9,F63,F7,F82,F821"]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=1024"]
+  - repo: local
+    hooks:
+      - id: verify-all
+        name: scripts/verify_all.sh（手动：pre-commit run verify-all --hook-stage manual）
+        entry: scripts/verify_all.sh
+        language: system
+        pass_filenames: false
+        stages: [manual]

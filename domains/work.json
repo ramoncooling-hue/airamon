@@ -1,0 +1,23 @@
+{
+  "id": "work",
+  "version": "1.0.0",
+  "workspace": "WorkPal",
+  "workspace_default": true,
+  "display_name": "工作 Wiki 知识图谱",
+  "course_patterns": ["AI工作系统", "工作", "职场", "WorkPal", "Work"],
+  "node_types": ["entity", "concept", "model", "method", "case", "metric", "process", "decision", "material"],
+  "relation_kinds": ["pre", "related", "part_of", "supports", "example_of", "causes", "contrasts", "bridge"],
+  "required_fields": ["name", "kp_type", "gist", "source_refs"],
+  "quality_rules": [
+    "工作方法必须保留适用场景、前置条件和原始 Wiki 证据",
+    "组织判断、个人经验和模型推断必须明确区分",
+    "流程节点要能回到来源材料，并标明当前是草稿、已确认还是已废弃",
+    "跨主题关系需要说明关系类型和为什么成立，模型候选不能直接进入正式图谱"
+  ],
+  "extraction_sections": ["摘要", "关键概念", "方法与流程", "案例与判断", "适用边界", "溯源", "相关链接"],
+  "wiki_rules": {
+    "frontmatter_schema": "cyberpal.note.v2",
+    "link_style": "wikilink",
+    "evidence_locator": "markdown_line_or_file"
+  }
+}

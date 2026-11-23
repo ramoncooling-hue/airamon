@@ -1,0 +1,16 @@
+[
+  {"id":"missing-01","query":"边际成本在老师上传的讲义第几页？","expected":[]},
+  {"id":"missing-02","query":"我上次关于折旧的作业被扣了几分？","expected":[]},
+  {"id":"missing-03","query":"会计学期末考试的考场在哪里？","expected":[]},
+  {"id":"missing-04","query":"我们公司今年现金流量表的经营现金净额是多少？","expected":[]},
+  {"id":"missing-05","query":"谁最早提出了心理安全感，出生在哪一年？","expected":[]},
+  {"id":"missing-06","query":"老师这周布置的机会成本案例什么时候交？","expected":[]},
+  {"id":"missing-07","query":"需求价格弹性的实证估计需要下载哪家公司的数据？","expected":[]},
+  {"id":"missing-08","query":"消费者剩余那次课堂讨论里我说了什么？","expected":[]},
+  {"id":"missing-09","query":"我昨天记录的私人旅行密语是什么？","expected":[]},
+  {"id":"missing-10","query":"群体思维的定义是什么？","course":"会计学","expected":[]},
+  {"id":"positive-01","query":"机会成本","expected":[{"kind":"kp","course_name":"管理经济学","name":"机会成本"}]},
+  {"id":"positive-02","query":"折旧","expected":[{"kind":"kp","course_name":"会计学","name":"折旧"}]},
+  {"id":"positive-03","query":"团队成员为什么只挑选能证明自己原来观点正确的材料？","expected":[{"kind":"kp","course_name":"组织行为学","name":"确认偏误"}]},
+  {"id":"positive-04","query":"为什么赚到利润的企业也可能没有足够现金支付账单？该看哪张表？","expected":[{"kind":"kp","course_name":"会计学","name":"现金流量表"}]}
+]

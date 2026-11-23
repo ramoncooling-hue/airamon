@@ -1,0 +1,22 @@
+{
+  "id": "history",
+  "version": "1.0.0",
+  "workspace": "HistoryPal",
+  "display_name": "历史知识图谱",
+  "course_patterns": ["历史", "近代", "古代", "世界史", "中国史", "History"],
+  "node_types": ["entity", "event", "rule", "concept", "case", "material", "decision"],
+  "relation_kinds": ["pre", "related", "part_of", "supports", "example_of", "causes", "contrasts", "bridge"],
+  "required_fields": ["name", "kp_type", "gist", "source_refs"],
+  "quality_rules": [
+    "时间、地点、人物和史料来源分开记录",
+    "史料记载、后世解释和模型推断必须明确区分",
+    "事件的前因和后果必须有来源或标记为待审核",
+    "同名人物或地点必须用时代和地域消歧"
+  ],
+  "extraction_sections": ["摘要", "人物与组织", "事件时间线", "制度与概念", "史料与解释", "溯源", "相关链接"],
+  "wiki_rules": {
+    "frontmatter_schema": "cyberpal.note.v2",
+    "link_style": "wikilink",
+    "evidence_locator": "page_or_markdown_line"
+  }
+}

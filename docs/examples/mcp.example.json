@@ -1,0 +1,22 @@
+{
+  "servers": [
+    {
+      "id": "public_search",
+      "enabled": false,
+      "trusted": false,
+      "command": "/absolute/path/to/node",
+      "args": ["/absolute/path/to/reviewed-mcp-server.js"],
+      "env_names": ["TAVILY_API_KEY"],
+      "workspace": "studypal",
+      "network": true,
+      "public_data": true,
+      "timeout_seconds": 10,
+      "tools": {
+        "tavily_search": {
+          "read_only": true,
+          "description": "查询公开互联网资料，核对原始来源后回答。"
+        }
+      }
+    }
+  ]
+}

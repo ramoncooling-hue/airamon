@@ -1,0 +1,22 @@
+{
+  "id": "mba",
+  "version": "1.0.0",
+  "workspace": "StudyPal",
+  "display_name": "MBA 学习知识图谱",
+  "course_patterns": ["会计", "经济", "组织", "管理", "营销", "战略", "商业", "MBA"],
+  "node_types": ["concept", "model", "method", "case", "exam_point", "metric", "process", "decision", "material"],
+  "relation_kinds": ["pre", "related", "part_of", "supports", "example_of", "causes", "contrasts", "bridge"],
+  "required_fields": ["name", "kp_type", "gist", "source_refs"],
+  "quality_rules": [
+    "公式必须保留变量定义、适用条件和来源页码",
+    "案例必须区分课堂案例、真实企业案例和模型示例",
+    "作业、考试和课程日期进入日程，不混成知识点",
+    "高频考点必须标记考频，并能回到教材或课堂材料"
+  ],
+  "extraction_sections": ["摘要", "关键概念", "模型与方法", "案例与应用", "易错点", "溯源", "相关链接"],
+  "wiki_rules": {
+    "frontmatter_schema": "cyberpal.note.v2",
+    "link_style": "wikilink",
+    "evidence_locator": "page_or_markdown_line"
+  }
+}

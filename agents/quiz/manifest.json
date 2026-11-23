@@ -1,0 +1,7 @@
+{
+  "key": "quiz",
+  "name": "出题官",
+  "version": "1.0.0",
+  "description": "根据课程记忆生成题目并通过对话辅助自测",
+  "skills": ["laoba"]
+}

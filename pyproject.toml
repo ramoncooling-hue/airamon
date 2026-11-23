@@ -1,0 +1,12 @@
+# 仅承载开发工具配置；本项目不是可安装的 Python 包（运行时入口见 app/ 与 scripts/）。
+# 依赖仍以 requirements*.txt 为准，避免 pip 与 requirements 双源。
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+extend-exclude = [".venv", "output", "_archive", "staging", "web/assets/vendor", "desktop/windows/node_modules"]
+
+[tool.ruff.lint]
+# 门禁只保留“会直接导致运行时错误”的规则：语法/导入结构错误、未定义名、重复定义。
+# 历史代码里的 E501/F401 等不作为阻塞项（避免 B1 一次性大改 130+ 文件）；增量治理见 02 O-CODE-1。
+select = ["E9", "F63", "F7", "F82", "F821"]

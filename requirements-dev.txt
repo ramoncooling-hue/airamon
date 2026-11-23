@@ -1,0 +1,14 @@
+# MinDock 本地开发与测试依赖（运行环境另见 requirements.txt；可选扩展见 requirements-extensions.txt）
+# 安装：.venv/bin/python -m pip install -r requirements.txt -r requirements-extensions.txt -r requirements-dev.txt
+-r requirements.txt
+pytest==9.1.1
+httpx==0.28.1
+jsonschema==4.26.0
+python-multipart==0.0.32
+
+# --- 开发工具链（T1.14；dev-only，不进入运行时依赖、不随发布包分发） ---
+ruff==0.17.1
+pre-commit==4.7.0
+pytest-cov==7.1.0
+pytest-randomly==5.0.0
+pip-licenses==5.5.5

@@ -1,0 +1,11 @@
+# Optional source extras; desktop locks and collectors include these versions.
+# Installer/native acceptance is recorded separately from dependency declarations.
+mcp==2.3.0
+sqlite-vec==0.1.9
+# 旁听转录（ASR）引擎：本地 faster-whisper 推理。缺省不装不影响应用启动，
+# app/memory/asr.py 会在使用时提示安装本文件。
+faster-whisper==1.2.1
+av==16.1.0
+ctranslate2==4.8.3
+onnxruntime==1.31.0
+numpy==2.5.4

@@ -1,0 +1,12 @@
+{
+  "version": "public-demo-1",
+  "description": "MinDock public demo seed with reusable course, calendar and notice examples",
+  "files": [
+    "dash_courses.json",
+    "dash_sched.json",
+    "dash_notices.json",
+    "recs_会计学_kp.json",
+    "recs_组织行为学_kp.json",
+    "recs_管理经济学_kp.json"
+  ]
+}

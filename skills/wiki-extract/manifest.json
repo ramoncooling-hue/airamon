@@ -1,0 +1,6 @@
+{
+  "key": "wiki-extract",
+  "name": "Wiki 拆录",
+  "version": "1.0.0",
+  "description": "把已识别材料拆分为带来源定位的 Wiki 候选条目，供人工确认。"
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "marginal-cost",
+    "query": "新增一单位产量会增加什么成本？",
+    "course": "管理经济学",
+    "expected": [
+      {"kind": "kp", "course_name": "管理经济学", "name": "边际成本"}
+    ]
+  }
+]

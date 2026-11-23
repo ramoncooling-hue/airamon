@@ -1,0 +1,7 @@
+{
+  "key": "review",
+  "name": "复盘官",
+  "version": "1.0.0",
+  "description": "按掌握度和风险排序生成课程复盘清单",
+  "skills": ["laoba"]
+}

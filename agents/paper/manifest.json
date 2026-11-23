@@ -1,0 +1,7 @@
+{
+  "key": "paper",
+  "name": "论文专家",
+  "version": "1.0.0",
+  "description": "结合课程材料和联网来源生成可修改的论文与报告初稿",
+  "skills": ["laoba"]
+}

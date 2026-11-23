@@ -1,0 +1,22 @@
+{
+  "id": "ecommerce",
+  "version": "1.0.0",
+  "workspace": "EcommercePal",
+  "display_name": "电商经营知识图谱",
+  "course_patterns": ["电商", "直播", "零售", "渠道", "商品", "Ecommerce"],
+  "node_types": ["entity", "process", "metric", "method", "case", "decision", "concept", "material"],
+  "relation_kinds": ["pre", "related", "part_of", "supports", "example_of", "causes", "contrasts", "bridge"],
+  "required_fields": ["name", "kp_type", "gist", "source_refs"],
+  "quality_rules": [
+    "GMV、转化率、客单价等指标必须记录口径、时间窗口和数据来源",
+    "活动结果不能直接写成普遍因果规律",
+    "策略必须注明适用渠道、用户人群和约束条件",
+    "商品、用户、渠道和活动要区分实体类型"
+  ],
+  "extraction_sections": ["摘要", "对象与渠道", "流程", "指标口径", "策略与案例", "溯源", "相关链接"],
+  "wiki_rules": {
+    "frontmatter_schema": "cyberpal.note.v2",
+    "link_style": "wikilink",
+    "evidence_locator": "page_or_markdown_line"
+  }
+}
